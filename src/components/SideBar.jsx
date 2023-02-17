@@ -1,6 +1,31 @@
 import { ListGroup, Button, Form } from "react-bootstrap";
+import { useState } from "react";
 
 const SideBar = () => {
+  const [query, setQuery] = useState("");
+
+  const handleChange = (e) => {
+    setQuery(e.target.value);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch(
+        "https://striveschool-api.herokuapp.com/api/deezer/search?q=" + query
+      );
+      if (response.ok) {
+        const { data } = await response.json();
+        setQuery(data);
+      } else {
+        alert("Error fetching results");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <>
       <div className="navbar-custom d-none d-lg-block d-xl-block d-xxl-block">
@@ -32,13 +57,13 @@ const SideBar = () => {
                 <i className="fa-solid fa-magnifying-glass mx-3"></i>
               </div>
               <div className="w-75 d-flex inputArea">
-                <Form>
+                <Form onSubmit={handleSubmit}>
                   <Form.Control
-                    id="artist-input"
-                    className="w-75"
-                    type="text"
-                    placeholder="Search artist"
-                  ></Form.Control>
+                    type="search"
+                    value={query}
+                    onChange={handleChange}
+                    placeholder="type and press Enter"
+                  />
                 </Form>
               </div>
             </div>
