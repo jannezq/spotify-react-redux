@@ -264,7 +264,7 @@ const MainPage = () => {
               id="recently"
             >
               {/* Here goes the second set of musics */}
-              {songs?.slice(0, 8).map((songObj) => {
+              {songs?.slice(0, 10).map((songObj) => {
                 return <DisplaySongs key={songObj.id} songs={songObj} />;
               })}
             </div>
@@ -278,7 +278,7 @@ const MainPage = () => {
             id="shows"
           >
             {/* Here goes the third set of musics */}
-            {podcast?.slice(0, 8).map((songObj) => {
+            {podcast?.slice(0, 10).map((songObj) => {
               return <DisplaySongs key={songObj.id} songs={songObj} />;
             })}
           </div>

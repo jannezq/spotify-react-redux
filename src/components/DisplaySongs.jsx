@@ -1,19 +1,27 @@
 const DisplaySongs = (props) => {
   return (
     <>
-      <div class="morning-card col-sm-12 col-md-4 col-lg-3">
-        <div class="card mb-3 d-flex flex-row">
-          <div class="col-md-4 pl-0">
-            <img
-              src={props.songs.album.cover}
-              class="img-fluid rounded-start"
-              alt="..."
-            />
-          </div>
-          <div class="col-md-8 pl-0 d-flex justify-content-start align-items-center morning-card-title">
+      <div className="col mb-4">
+        <div className="card px-3 py-3 song-card">
+          <img
+            className="song-img card-img-top"
+            src={props.songs.album.cover}
+            alt="..."
+          />
+          <div className="card-body px-0">
             <a href="#">
-              <p class="card-text">{props.songs.title}</p>
+              <h6 className="card-title">{props.songs.name}</h6>
             </a>
+            <a href="#">
+              <p className="card-text">{props.songs.title}</p>
+            </a>
+          </div>
+          <div id="card-${list.preview}" className="play-button-outer">
+            <div
+              onclick="playControls(event)"
+              className="play-button"
+              id="${list.preview}"
+            ></div>
           </div>
         </div>
       </div>

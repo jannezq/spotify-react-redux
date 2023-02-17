@@ -1,4 +1,4 @@
-import { ListGroup, Button } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 
 const NavBar = () => {
   return (
@@ -21,7 +21,7 @@ const NavBar = () => {
             >
               User
             </Button>
-            <ListGroup
+            {/* <ListGroup
               className="dropdown-menu dropdown-menu-dark"
               aria-labelledby="dropdownMenuButton1"
             >
@@ -61,7 +61,7 @@ const NavBar = () => {
                   Log out
                 </a>
               </ListGroup.Item>
-            </ListGroup>
+            </ListGroup> */}
           </div>
         </div>
       </nav>
