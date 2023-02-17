@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import DisplaySongs from "./DisplaySongs";
 import DisplaySearch from "./DisplaySearch";
 import { ListGroup, Button, Form } from "react-bootstrap";
+import Player from "./Player";
 
 const MainPage = () => {
   const [songs, setSongs] = useState([]);
@@ -283,6 +284,7 @@ const MainPage = () => {
             })}
           </div>
         </div>
+        <Player />
       </main>
     </>
   );
