@@ -1,4 +1,4 @@
-import { ListGroup, Button } from "react-bootstrap";
+import { ListGroup, Button, Form } from "react-bootstrap";
 
 const SideBar = () => {
   return (
@@ -32,12 +32,14 @@ const SideBar = () => {
                 <i className="fa-solid fa-magnifying-glass mx-3"></i>
               </div>
               <div className="w-75 d-flex inputArea">
-                <input
-                  id="artist-input"
-                  className="w-75"
-                  type="text"
-                  placeholder="Search artist"
-                />
+                <Form>
+                  <Form.Control
+                    id="artist-input"
+                    className="w-75"
+                    type="text"
+                    placeholder="Search artist"
+                  ></Form.Control>
+                </Form>
               </div>
             </div>
           </ListGroup.Item>
